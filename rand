@@ -1,0 +1,12 @@
+#!/bin/bash
+# FILE: rand
+echo "Give me a number from 0 to 9> "
+rand=`expr $RANDOM % 10`
+read mynum
+if [ $rand -eq $mynum ]
+then
+  echo "Congrats! Your number $mynum is equal to random $rand."
+else
+  echo "Sorry! Your number $mynum in NOT equal to random $rand."
+fi
+

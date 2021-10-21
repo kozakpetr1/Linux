@@ -1,0 +1,7 @@
+#!/bin/bash
+i=1
+for par in "$@"
+do
+	echo "param $i: $par"
+	i=$((i + 1))
+done
