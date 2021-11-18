@@ -1,0 +1,26 @@
+#!/bin/bash
+# FILE: logme
+if [[ ( ! -z $1 && $1 == "as" ) ]]
+then
+	if [[ ! -z "$2" ]]
+	then
+		if [[ ( ! -z $3 && $3 == "using" ) ]]
+		then
+			if [[ ! -z "$4" ]]
+			then
+				echo "Trying to open $4 shell as user $2..."
+				su -l $2 -s /bin/$4
+			else
+				echo "Trying to open /bin/bash as user $2..."
+				su -l $2 -s /bin/bash
+			fi
+		else
+			echo "Trying to open /bin/bash as user $2..."
+			su -l $2 -s /bin/bash
+		fi
+	else
+		echo -e "Can't sign you in.\nUse syntax:\nsignme as [user]\nsignme as [user] using [shell]"
+	fi
+else
+	echo -e "Can't sign you in.\nUse syntax:\nsignme as [user]\nsignme as [user] using [shell]"
+fi
