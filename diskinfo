@@ -1,0 +1,22 @@
+#!/bin/bash
+# FILE: diskinfo
+clear
+
+echo -e "\033[1;31msudo fdisk -l | egrep '(s|h)d[a-z]'\033[0m\n"
+sudo fdisk -l | egrep '(s|h)d[a-z]'
+read X
+clear
+
+echo -e "\033[1;31msudo mount | egrep '^/dev'\033[0m\n"
+sudo mount | egrep '^/dev'
+read X
+clear
+
+echo -e "\033[1;31msudo df -hT | egrep '(s|h)d[a-z]'\033[0m\n"
+sudo df -hT | egrep '(s|h)d[a-z]'
+read X
+clear
+
+echo -e "\033[1;31msudo lsblk -f | egrep '(s|h)d[a-z]'\033[0m\n"
+sudo lsblk -f | egrep '(s|h)d[a-z]'
+
