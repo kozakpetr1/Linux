@@ -1,4 +1,5 @@
 #!/bin/bash
+# Creating bash script file
 FILE=$1
 if test ! -f "$FILE"
 then
