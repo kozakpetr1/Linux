@@ -1,0 +1,3 @@
+wget -O urls.html $1
+cat urls.html | egrep -o '(http|https)://[a-zA-Z0-9.?:%/&=+-]*'
+
