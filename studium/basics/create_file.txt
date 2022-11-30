@@ -1,0 +1,41 @@
+# VYTVOŘENÍ NOVÉHO SOUBORU
+# Možností vytvoření nového souboru je mnoho.
+# Níže jsou uvedeny některé z nich.
+
+# Vytvoření souboru pomocí příkazu cat.
+# cat > path/to/file
+
+$ cat ~/info.txt
+Type some text ...
+CTRL-D
+
+# Vytvoření prázdného souboru pomocí příkazu touch.
+# Soubor bude vytvořen pouze v případě, že ještě neexistuje.
+# Příkaz primárně slouží ke změně časového razítka (poslední přístup, resp. modifikace) souboru
+
+$ touch path/to/file
+
+# Zjednodušený zápis:
+
+$ > path/to/file
+
+# Obecný postup vytvoření souboru pomocí přesměrování výstupu.
+# příkaz > path/to/file
+
+$ echo "Some text ..." > path/to/file
+$ echo -n > path/to/file                       # vytvoření prázdného souboru
+$ printf "Some text ..." > path/to/file
+$ ls -l > path/to/file
+
+# Vytvoření neexistujícího souboru pomocí editoru.
+
+$ nano path/to/file
+$ vi path/to/file
+$ vim path/to/file
+$ emacs path/to/file
+$ mcedit path/to/file
+
+# Vytvoření prázdného souboru s nastavením ownership a permissions
+# sudo install -v -oUSER -gGROUP -m640 /dev/null path/to/file
+
+$ sudo install -v -oubuntu -gubuntu -m640 /dev/null newFile.txt

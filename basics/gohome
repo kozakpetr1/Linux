@@ -1,0 +1,8 @@
+#!/bin/bash
+# FILE: basics/gohome
+# Script navigates to user home directory and then prints working directory.
+echo "Navigating to home directory ..."
+cd ~
+echo -n "Your home directory is: "
+pwd
+

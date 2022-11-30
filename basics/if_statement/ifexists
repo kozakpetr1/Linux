@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ $# -eq 1 ]
+then
+    printf "Parameter: %s\n" $1
+    if [ -e $1 ]
+    then
+        printf "File %s exists.\n" $1
+    else
+        printf "File %s not presented.\n" $1
+    fi
+else
+    printf "Parameter not presented.\n"
+fi

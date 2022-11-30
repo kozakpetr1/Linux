@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ $1 -gt 100 ]
+then
+    echo To byt velka cislo, juuu.
+    if (( $1 % 2 == 0 ))
+    then
+        echo Cislo byt suda, hele.
+    fi
+fi
