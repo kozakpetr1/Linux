@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "Zdravím osobu jménem $1."

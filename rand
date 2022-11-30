@@ -7,6 +7,6 @@ if [ $rand -eq $mynum ]
 then
   echo "Congrats! Your number $mynum is equal to random $rand."
 else
-  echo "Sorry! Your number $mynum in NOT equal to random $rand."
+  echo "Sorry! Your number $mynum is NOT equal to random $rand."
 fi
 
