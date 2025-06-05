@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Skript pro instalaci MongoDB 8.0 na Debian 11 (bullseye)
+
+set -e  # ukončit skript při chybě
+
+echo "Aktualizuji systém..."
+sudo apt update
+
+echo "Přidávám GPG klíč MongoDB..."
+wget -qO - https://pgp.mongodb.com/server-8.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-8.0.gpg
+
+echo "Přidávám repozitář MongoDB 8.0 pro Debian 11..."
+echo "deb [signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg] https://repo.mongodb.org/apt/debian bullseye/mongodb-org/8.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+
+echo "Aktualizuji repozitáře..."
+sudo apt update
+
+echo "Instaluji MongoDB 8.0..."
+sudo apt install -y mongodb-org
+
+echo "Spouštím a povoluji službu mongod..."
+sudo systemctl start mongod
+sudo systemctl enable mongod
+
+echo "Hotovo! Verze MongoDB:"
+mongod --version | head -n 1
